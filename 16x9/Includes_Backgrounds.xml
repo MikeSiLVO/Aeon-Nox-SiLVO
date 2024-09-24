@@ -144,9 +144,10 @@
 			<control type="multiimage">
 				<right>-120</right>
 				<width>1280</width>
-				<height>720</height>
+				<height>768</height>
 				<include>MultiImageTime</include>
 				<imagepath background="true" diffuse="views/myflix/fanart_diffuse.png">$VAR[GlobalBackgroundVar]</imagepath>
+				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>Control.IsVisible(509)</visible>
 			</control>
 			<control type="group">
@@ -219,6 +220,16 @@
 				<aspectratio>scale</aspectratio>
 				<fadetime>FanartCrossfadeTime</fadetime>
 			</control>
+		</control>
+	</include>
+	<include name="NextAiredBG">
+		<control type="image">
+			<right>0</right>
+			<width>1500</width>
+			<height>800</height>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="special://skin/extras/backgrounds/fallback_movies.jpg" diffuse="views/fanart_diffuse.png">$INFO[Container.ListItem.Art(fanart)]</texture>
 		</control>
 	</include>
 	<include name="SnowBackground">

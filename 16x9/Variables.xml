@@ -529,12 +529,12 @@
 	</variable>
 	<variable name="AudioCodecFlagVar">
 		<value condition="String.Contains(ListItem.Filename,atmos)">atmos.png</value>
-		<value condition="String.Contains(ListItem.Filename,dtsx) | String.Contains(ListItem.Filename,dts-x)">dtsx.png</value>
+		<value condition="String.Contains(ListItem.Filename,dtsx) | String.Contains(ListItem.Filename,dts-x) | String.IsEqual(ListItem.AudioCodec,dts_x)">dtsx.png</value>
 		<value>$INFO[ListItem.AudioCodec,,.png]</value>
 	</variable>
 	<variable name="PlayerAudioCodecFlagVar">
 		<value condition="String.Contains(Player.Filename,atmos)">atmos.png</value>
-		<value condition="String.Contains(Player.Filename,dtsx) | String.Contains(Player.Filename,dts-x)">dtsx.png</value>
+		<value condition="String.Contains(Player.Filename,dtsx) | String.Contains(Player.Filename,dts-x) | String.IsEqual(VideoPlayer.AudioCodec,dts_x)">dtsx.png</value>
 		<value>$INFO[VideoPlayer.AudioCodec,,.png]</value>
 	</variable>
 	<!-- InfoPanel -->

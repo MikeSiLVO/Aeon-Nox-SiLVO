@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1120">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<include>TMDbHelperContentList</include>
+		<include>NextAiredBG</include>
+		<control type="group">
+			<include>WindowOpenCloseAnimation</include>
+			<control type="group">
+				<left>15</left>
+				<top>80</top>
+				<width>600</width>
+				<height>500</height>
+				<visible>!Control.HasFocus(9000)</visible>
+				<control type="label">
+					<width>600</width>
+					<height>48</height>
+					<font>font16_title_bold</font>
+					<textcolor>white2</textcolor>
+					<shadowcolor>shadow</shadowcolor>
+					<label>$INFO[ListItem.TVShowTitle]</label>
+				</control>
+				<control type="label">
+					<top>48</top>
+					<width>600</width>
+					<height>43</height>
+					<font>font14</font>
+					<textcolor>white2</textcolor>
+					<shadowcolor>shadow</shadowcolor>
+					<label>$INFO[ListItem.label]</label>
+				</control>
+				<control type="label">
+					<top>91</top>
+					<width>600</width>
+					<height>43</height>
+					<font>font14</font>
+					<textcolor>white2</textcolor>
+					<shadowcolor>shadow</shadowcolor>
+					<label>$INFO[ListItem.Property(air_day_short),, ]$INFO[ListItem.Property(air_date_short)]$INFO[ListItem.Property(air_time), @]</label>
+				</control>
+				<control type="textbox">
+					<top>134</top>
+					<width>600</width>
+					<height>160</height>
+					<align>justify</align>
+					<font>font14</font>
+					<textcolor>white2</textcolor>
+					<shadowcolor>shadow</shadowcolor>
+					<label>$INFO[ListItem.Plot]</label>
+				</control>
+			</control>
+			<control type="list" id="9000">
+				<left>15</left>
+				<bottom>300</bottom>
+				<width>1890</width>
+				<height>90</height>
+				<ondown condition="Container(9000).HasFocus(1)">9101</ondown>
+				<ondown condition="Container(9000).HasFocus(2)">9102</ondown>
+				<ondown condition="Container(9000).HasFocus(3)">9103</ondown>
+				<ondown condition="Container(9000).HasFocus(4)">9104</ondown>
+				<ondown condition="Container(9000).HasFocus(5)">9105</ondown>
+				<ondown condition="Container(9000).HasFocus(6)">9106</ondown>
+				<ondown condition="Container(9000).HasFocus(7)">9107</ondown>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="quadratic" easing="out">200</scrolltime>
+				<itemlayout height="90" width="270">
+					<control type="label">
+						<width>270</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>20</textoffsetx>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<width>270</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>20</textoffsetx>
+						<align>right</align>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="90" width="270">
+					<control type="label">
+						<width>270</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>20</textoffsetx>
+						<textcolor>$VAR[ThemeLabelColor]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<width>270</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>20</textoffsetx>
+						<align>right</align>
+						<textcolor>$VAR[ThemeLabelColor]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>$INFO[Container(9101).ListItem.Property(widget)]</label>
+						<label2>$INFO[Container(9101).NumItems,(,)]</label2>
+						<visible>Integer.IsGreater(Container(9101).NumItems,0)</visible>
+					</item>
+					<item id="2">
+						<label>$INFO[Container(9102).ListItem.Property(widget)]</label>
+						<label2>$INFO[Container(9102).NumItems,(,)]</label2>
+						<visible>Integer.IsGreater(Container(9102).NumItems,0)</visible>
+					</item>
+					<item id="3">
+						<label>$INFO[Container(9103).ListItem.Property(widget)]</label>
+						<label2>$INFO[Container(9103).NumItems,(,)]</label2>
+						<visible>Integer.IsGreater(Container(9103).NumItems,0)</visible>
+					</item>
+					<item id="4">
+						<label>$INFO[Container(9104).ListItem.Property(widget)]</label>
+						<label2>$INFO[Container(9104).NumItems,(,)]</label2>
+						<visible>Integer.IsGreater(Container(9104).NumItems,0)</visible>
+					</item>
+					<item id="5">
+						<label>$INFO[Container(9105).ListItem.Property(widget)]</label>
+						<label2>$INFO[Container(9105).NumItems,(,)]</label2>
+						<visible>Integer.IsGreater(Container(9105).NumItems,0)</visible>
+					</item>
+					<!-- <item id="6">
+						<label>$INFO[Container(9106).ListItem.Property(widget)]</label>
+						<label2>$INFO[Container(9106).NumItems,(,)]</label2>
+						<visible>Integer.IsGreater(Container(9106).NumItems,0)</visible>
+					</item>
+					<item id="7">
+						<label>$INFO[Container(9107).ListItem.Property(widget)]</label>
+						<label2>$INFO[Container(9107).NumItems,(,)]</label2>
+						<visible>Integer.IsGreater(Container(9107).NumItems,0)</visible>
+					</item> -->
+				</content>
+			</control>
+			<control type="group" id="9001">
+				<left>15</left>
+				<bottom>20</bottom>
+				<width>1890</width>
+				<height>300</height>
+				<control type="panel" id="9101">
+					<include content="SearchPosterLayout">
+						<param name="list_id">9101</param>
+						<param name="content">plugin://plugin.video.themoviedb.helper/?info=library_nextaired&amp;reload=$INFO[System.Time(hh)]&amp;startdate=-1&amp;days=1&amp;widget=True&amp;type=episode</param>
+					</include>
+					<onup>9000</onup>
+					<onclick>noop</onclick>
+					<visible allowhiddenfocus="true">Integer.IsGreater(Container(9101).NumItems,0) + Container(9000).HasFocus(1)</visible>
+				</control>
+				<control type="panel" id="9102">
+					<include content="SearchPosterLayout">
+						<param name="list_id">9102</param>
+						<param name="content">plugin://plugin.video.themoviedb.helper/?info=library_nextaired&amp;reload=$INFO[System.Time(hh)]&amp;startdate=0&amp;days=1&amp;widget=True&amp;type=episode</param>
+					</include>
+					<onup>9000</onup>
+					<onclick>noop</onclick>
+					<visible allowhiddenfocus="true">Integer.IsGreater(Container(9102).NumItems,0) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="9103">
+					<onup>9000</onup>
+					<include content="SearchPosterLayout">
+						<param name="list_id">9103</param>
+						<param name="content">plugin://plugin.video.themoviedb.helper/?info=library_nextaired&amp;reload=$INFO[System.Time(hh)]&amp;startdate=1&amp;days=1&amp;widget=True&amp;type=episode</param>
+					</include>
+					<visible allowhiddenfocus="true">Integer.IsGreater(Container(9103).NumItems,0) + Container(9000).HasFocus(3)</visible>
+					<onclick>noop</onclick>
+				</control>
+				<control type="panel" id="9104">
+					<onup>9000</onup>
+					<include content="SearchPosterLayout">
+						<param name="height">900</param>
+						<param name="list_id">9104</param>
+						<param name="content">plugin://plugin.video.themoviedb.helper/?info=library_nextaired&amp;reload=$INFO[System.Time(hh)]&amp;startdate=0&amp;days=7&amp;widget=True&amp;type=episode</param>
+					</include>
+					<visible allowhiddenfocus="true">Integer.IsGreater(Container(9104).NumItems,0) + Container(9000).HasFocus(4)</visible>
+					<onclick>noop</onclick>
+				</control>
+				<control type="panel" id="9105">
+					<onup>9000</onup>
+					<include content="SearchPosterLayout">
+						<param name="height">900</param>
+						<param name="list_id">9105</param>
+						<param name="content">plugin://plugin.video.themoviedb.helper/?info=library_nextaired&amp;reload=$INFO[System.Time(hh)]&amp;startdate=-7&amp;days=7&amp;widget=True&amp;type=episode</param>
+					</include>
+					<visible allowhiddenfocus="true">Integer.IsGreater(Container(9105).NumItems,0) + Container(9000).HasFocus(5)</visible>
+					<onclick>noop</onclick>
+				</control>
+				<!-- <control type="panel" id="9106">
+					<visible allowhiddenfocus="true">Integer.IsGreater(Container(9106).NumItems,0) + Container(9000).HasFocus(6)</visible>
+					<onup>9000</onup>
+					<onclick>noop</onclick>
+					<width>1890</width>
+					<height>300</height>
+					<orientation>horizontal</orientation>
+					<preloaditems>2</preloaditems>
+					<scrolltime tween="quadratic" easing="out">300</scrolltime>
+					<itemlayout height="300" width="630">
+						<control type="image">
+							<width>210</width>
+							<height>300</height>
+							<bordersize>8</bordersize>
+							<bordertexture border="6" colordiffuse="black">thumbs/poster_focus.png</bordertexture>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[PosterVar]</texture>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>400</width>
+							<height>48</height>
+							<font>font16_title_bold</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<label>$INFO[ListItem.TVShowTitle]</label>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<top>48</top>
+							<width>400</width>
+							<height>43</height>
+							<font>font14</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<label>$INFO[ListItem.label]</label>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<top>91</top>
+							<width>400</width>
+							<height>43</height>
+							<font>font14</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<label>$INFO[ListItem.Property(air_day_short),, ]$INFO[ListItem.Property(air_date_short)]$INFO[ListItem.Property(air_time), @]</label>
+						</control>
+						<control type="textbox">
+							<left>220</left>
+							<top>134</top>
+							<width>400</width>
+							<height>160</height>
+							<align>justify</align>
+							<font>font14</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<label>$INFO[ListItem.Plot]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="300" width="630">
+						<control type="group">
+							<animation effect="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto">Focus</animation>
+							<control type="image">
+								<width>210</width>
+								<height>300</height>
+								<bordersize>8</bordersize>
+								<bordertexture border="6" colordiffuse="$VAR[HighlightBarColor]">thumbs/poster_focus.png</bordertexture>
+								<aspectratio>scale</aspectratio>
+								<texture background="true">$VAR[PosterVar]</texture>
+							</control>
+							<control type="label">
+								<left>220</left>
+								<width>400</width>
+								<height>48</height>
+								<font>font16_title_bold</font>
+								<shadowcolor>shadow</shadowcolor>
+								<label>$INFO[ListItem.TVShowTitle]</label>
+							</control>
+							<control type="label">
+								<left>220</left>
+								<top>48</top>
+								<width>400</width>
+								<height>43</height>
+								<font>font14</font>
+								<shadowcolor>shadow</shadowcolor>
+								<label>$INFO[ListItem.label]</label>
+							</control>
+							<control type="label">
+								<left>220</left>
+								<top>91</top>
+								<width>400</width>
+								<height>43</height>
+								<font>font14</font>
+								<shadowcolor>shadow</shadowcolor>
+								<label>$INFO[ListItem.Property(air_day_short),, ]$INFO[ListItem.Property(air_date_short)]$INFO[ListItem.Property(air_time), @]</label>
+							</control>
+							<control type="textbox">
+								<left>220</left>
+								<top>134</top>
+								<width>400</width>
+								<height>160</height>
+								<align>justify</align>
+								<font>font14</font>
+								<shadowcolor>shadow</shadowcolor>
+								<label>$INFO[ListItem.Plot]</label>
+							</control>
+						</control>
+					</focusedlayout>
+					<content target="videos">plugin://plugin.video.themoviedb.helper/?info=library_nextaired&amp;reload=$INFO[System.Time(hh)]&amp;startdate=0&amp;days=30&amp;widget=True&amp;type=episode</content>
+				</control>
+				<control type="panel" id="9107">
+					<onup>9000</onup>
+					<include content="SearchPosterLayout">
+						<param name="height">900</param>
+						<param name="list_id">9107</param>
+						<param name="content">plugin://plugin.video.themoviedb.helper/?info=library_nextaired&amp;reload=$INFO[System.Time(hh)]&amp;startdate=-30&amp;days=30&amp;widget=True&amp;type=episode</param>
+					</include>
+					<visible allowhiddenfocus="true">Integer.IsGreater(Container(9107).NumItems,0) + Container(9000).HasFocus(7)</visible>
+					<onclick>noop</onclick>
+				</control> -->
+			</control>
+		</control>
+		<include>Topbar</include>
+		<include content="BusySpinner">
+			<param name="visible">Container(9000).IsUpdating | Container(9101).IsUpdating | Container(9102).IsUpdating | Container(9103).IsUpdating | Container(9104).IsUpdating | Container(9105).IsUpdating | Container(9106).IsUpdating | Container(9107).IsUpdating</param>
+			<param name="texture">colors/black.png</param>
+		</include>
+	</controls>
+</window>
